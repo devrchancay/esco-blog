@@ -1,0 +1,53 @@
+@tailwind base;
+
+.theme-dark {
+  --back: theme("colors.gray.900");
+  --primary: theme("colors.white");
+  --javascript: #edd53f;
+  --react: #61dafb;
+  --name: #6166dc;
+}
+
+.theme-dark .title-react {
+  color: var(--react);
+}
+
+.theme-dark .title-javascript {
+  color: var(--javascript);
+}
+.theme-dark .title-name {
+  color: var(--name);
+}
+
+.theme-light {
+  --back: theme("colors.white");
+  --primary: theme("colors.gray.900");
+  --javascript: #edd53f;
+  --react: #61dafb;
+  --name: #e9daac;
+}
+
+.theme-light .title-react {
+  background: linear-gradient(120deg, var(--react), var(--react));
+  background-repeat: no-repeat;
+  background-size: 100% 1rem;
+  background-position: 0 88%;
+}
+
+.theme-light .title-javascript {
+  background: linear-gradient(120deg, var(--javascript), var(--javascript));
+  background-repeat: no-repeat;
+  background-size: 100% 1rem;
+  background-position: 0 88%;
+}
+
+.theme-light .title-name {
+  background: linear-gradient(120deg, var(--name), var(--name));
+  background-repeat: no-repeat;
+  background-size: 100% 1rem;
+  background-position: 0 88%;
+}
+
+@tailwind components;
+
+@tailwind utilities;
