@@ -1,7 +1,15 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require("path")
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ actions }) => {
+  const locales = ["en", "es"]
+
+  locales.forEach(locale => {
+    actions.createPage({
+      path: locale === "en" ? "/" : locale,
+      component: path.resolve(`./src/templates/home.tsx`),
+      context: {
+        locale,
+      },
+    })
+  })
+}
