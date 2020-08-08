@@ -23,6 +23,7 @@ module.exports = {
         back: `var(--back)`,
         primary: `var(--primary)`,
         javascript: `var(--javascript)`,
+        muted: `var(--muted)`,
         react: `var(--react)`,
         name: `var(--name)`,
       },

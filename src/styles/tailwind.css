@@ -3,6 +3,7 @@
 .theme-dark {
   --back: theme("colors.gray.900");
   --primary: theme("colors.white");
+  --muted: theme("colors.gray.600");
   --javascript: #edd53f;
   --react: #61dafb;
   --name: #6166dc;
@@ -22,6 +23,7 @@
 .theme-light {
   --back: theme("colors.white");
   --primary: theme("colors.gray.900");
+  --muted: theme("colors.gray.200");
   --javascript: #edd53f;
   --react: #61dafb;
   --name: #e9daac;
