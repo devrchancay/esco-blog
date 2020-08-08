@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Hero from "../components/hero"
@@ -8,12 +8,20 @@ import BlogPost from "../components/blogpost"
 const IndexPage = ({ data }) => (
   <Layout>
     <Hero />
-    <div className="container">
-      <div className="bg-red-500 p-2 rounded flex justify-between px-4 lg:w-1/2">
-        <p className="text-lg rounded text-primary">
-          This site is in the following languages:
-        </p>
-        <p className="text-primary text-center">EN | ES</p>
+    <div className="container my-4">
+      <div className="bg-muted w-1/2 rounded overflow-hidden lg:w-1/5">
+        <ul className="w-full flex">
+          <li className="w-1/2 text-center px-2 py-2">
+            <Link className="text-primary block" to="/">
+              EN
+            </Link>
+          </li>
+          <li className="w-1/2 text-center px-2 py-2">
+            <Link className="text-primary block" to="/es/">
+              ES
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
     <BlogPost allBlogPost={data.allBlogPost} />
@@ -29,6 +37,7 @@ export const query = graphql`
           locale
           slug
           publishDate(formatString: "DD MMM YYYY", locale: $locale)
+          time: publishDate
           excerpt
         }
       }

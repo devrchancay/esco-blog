@@ -7,10 +7,13 @@ const BlogPost = ({ allBlogPost }) => {
         {allBlogPost.edges.map(({ node }) => {
           return (
             <article>
-              <h2 className="text-2xl text-primary font-display">
+              <h2 className="text-2xl text-primary font-display lg:text-4xl">
                 {node.title}
               </h2>
-              <h4 className="text-primary text-body">{node.publishDate}</h4>
+              <time className="text-primary text-body" datetime={node.time}>
+                {node.publishDate}
+              </time>
+
               <p className="text-primary font-body">{node.excerpt}</p>
             </article>
           )
