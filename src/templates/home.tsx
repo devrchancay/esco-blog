@@ -30,7 +30,10 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
   query($locale: String!) {
-    allBlogPost: allDatoCmsPost(filter: { locale: { eq: $locale } }) {
+    allBlogPost: allDatoCmsPost(
+      filter: { locale: { eq: $locale } }
+      sort: { order: DESC, fields: publishDate }
+    ) {
       edges {
         node {
           title
