@@ -1,6 +1,57 @@
 module.exports = {
   purge: ["./src/**/*.tsx"],
   theme: {
+    typography: theme => ({
+      default: {
+        css: [
+          {
+            color: `var(--primary)`,
+            thead: {
+              color: `var(--primary)`,
+            },
+            code: {
+              background: `var(--muted)`,
+              borderRadius: theme("borderRadius.default"),
+              padding: theme("padding.md"),
+            },
+            h1: {
+              fontFamily: theme("fontFamily.display"),
+              color: `var(--primary)`,
+            },
+            h2: {
+              fontFamily: theme("fontFamily.display"),
+              color: `var(--primary)`,
+            },
+            h3: {
+              fontFamily: theme("fontFamily.display"),
+              color: `var(--primary)`,
+            },
+            h4: {
+              fontFamily: theme("fontFamily.display"),
+              color: `var(--primary)`,
+            },
+            h5: {
+              fontFamily: theme("fontFamily.display"),
+              color: `var(--primary)`,
+            },
+            h6: {
+              fontFamily: theme("fontFamily.display"),
+              color: `var(--primary)`,
+            },
+            strong: {
+              color: `var(--primary)`,
+            },
+            p: {
+              fontFamily: theme("fontFamily.body"),
+            },
+            a: {
+              color: `var(--primary)`,
+              textDecoration: "underline",
+            },
+          },
+        ],
+      },
+    }),
     fontFamily: {
       display: ["Source Sans Pro"],
       body: ["Raleway"],
@@ -30,5 +81,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 }

@@ -5,6 +5,7 @@ const blogPosts = `
       allDatoCmsPost {
         edges {
           node {
+            id: originalId
             title
             locale
             slug
@@ -37,6 +38,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: node.slug,
       component: path.resolve(`./src/templates/posts.tsx`),
       context: {
+        PostID: node.id,
         Locale: node.locale,
       },
     })
