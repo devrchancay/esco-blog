@@ -14,7 +14,7 @@ export const ThemeContext = React.createContext<IThemeContext>(initialValue)
 const isServer = typeof window === "undefined"
 
 export default function ThemeProvider({ children }) {
-  const [theme, setTheme] = React.useState<themeTypes>("theme-light")
+  const [theme, setTheme] = React.useState<themeTypes>("theme-dark")
 
   React.useEffect(() => {
     if (!isServer) {
